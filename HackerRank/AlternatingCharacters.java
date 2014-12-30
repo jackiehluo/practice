@@ -17,7 +17,14 @@ public class Solution {
         String newString = "";
         for (int i = 0; i < testCases; i++) {
             newString = input.nextLine();
-            char previous = newString.charAt(0);
+            char previous;
+            if (newString != null && newString.length() > 0) {
+                previous = newString.charAt(0);
+            }
+            else {
+                newString = input.nextLine();
+                previous = newString.charAt(0);
+            }
             int deletions = 0;
             for (int j = 1; j < newString.length(); j++) {
                 char current = newString.charAt(j);
