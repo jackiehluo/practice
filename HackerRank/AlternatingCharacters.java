@@ -14,7 +14,7 @@ public class Solution {
             testCases = input.nextInt();
         }
         
-        char current = newString.charAt(j);
+        String newString = "";
         for (int i = 0; i < testCases; i++) {
             newString = input.nextLine();
             char previous = newString.charAt(0);
