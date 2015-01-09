@@ -10,8 +10,8 @@ public class Solution {
         
         Scanner input = new Scanner(System.in);
         int testCases = input.nextInt();
-        while (testCases < 1 || testCases > 10) {
-            System.out.println("Please input a number from 1 to 10.");
+        while (testCases < 1 || testCases > 15) {
+            System.out.println("Please input a number from 1 to 15.");
             testCases = input.nextInt();
         }
         
