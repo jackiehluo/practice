@@ -1,12 +1,13 @@
 def check_elements(number, array):
     element = "NO"
-    for i in range(number):
-        first = 0
-        second = 0
-        for j in range(i):
-            first += array[j]
-        for k in range(i + 1, number):
-            second += array[k]
+    if len(array) == 1:
+        element = "YES"
+        return element
+    first = 0
+    second = sum(array) - array[0]
+    for j in range(1, number):
+        first += array[j - 1]
+        second -= array[j]
         if first == second:
             element = "YES"
             break
