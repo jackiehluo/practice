@@ -20,10 +20,6 @@ def search():
 	else:
 		return render_template("search.html")
 
-@app.route('/add/<x>/<y>')
-def add(x, y):
-	return str(int(x) + int(y))
-
 @app.errorhandler(404)
 def not_found(error):
 	return "Sorry, I haven't coded that yet. I'll get back to you!", 404
