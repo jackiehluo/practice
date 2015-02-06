@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 # app.config('DEBUG') = True #
 
-@app.route('/')
+@app.route("/")
 def hello():
-	return "Hello World"
+    return render_template("hello.html")
 
 @app.route('/search', methods = ["GET", "POST"])
 def search():
