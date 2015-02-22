@@ -10,6 +10,7 @@ public class ArtistPairs {
  
         Scanner input = new Scanner(System.in);
         String fileName = "";
+        List<String> fullList = new ArrayList<String>();
         HashMap<String, Integer> counter = new HashMap<String, Integer>();
         List<String> popularArtists = new ArrayList<String>();
  
@@ -24,9 +25,28 @@ public class ArtistPairs {
  
         System.out.println("Enter new file name for popular pairs of artists: ");
         String newName = keyboard.nextLine();
- 
-    public void countArtists()
         
+        System.out.println(popularArtists);
+        
+        input.close();
+    }
+ 
+    public void readFile(){
+        ArrayList<String>tmpList = new ArrayList<String>();
+        try {
+            Scanner fileInput = new Scanner(new FileReader(f));
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        while(fileInput.hasNextLine()) {
+            String tmpLine = fileInput.nextLine();
+            tmpList.add(tmpLine);
+        }
+        fullList.add(tmpList);
+    }
+ 
+    public void countArtists(){
         for(int i = 0; i < 1000; i++){
             String line = input.nextLine();
             List<String> favoriteArtists = Arrays.asList(line.split(","));
@@ -43,9 +63,5 @@ public class ArtistPairs {
                 }
             }
         }
-        
-        System.out.println(popularArtists);
-        
-        input.close();
     }
 }
