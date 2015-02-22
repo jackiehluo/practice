@@ -8,8 +8,13 @@ test_cases = int(raw_input())
 
 for case in range(test_cases):
     n = int(raw_input())
-    answer = []
-    for x in range(n + 1):
+    first = []
+    for x in range((n + 1) / 2 + 1):
         number = nCr(n, x)
-        answer.append(number % (10 ** 9))
+        first.append(number % (10 ** 9))
+    if first[-1] == first[-2]:
+        second = first[-3::-1]
+    else:
+        second = first[-2::-1]
+    answer = first + second 
     print " ".join(map(str, answer))
