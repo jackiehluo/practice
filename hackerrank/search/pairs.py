@@ -2,10 +2,8 @@
 # Head ends here
 def pairs(a,k):
     #a contains array of numbers and k is the value of difference
-    answer = 0
-    for i in range(len(a)):
-        if a[i] + k in a:
-            answer += 1
+    numbers = set(a)
+    answer = sum(1 for i in a if i - k in numbers)
     return answer
 # Tail starts here
 if __name__ == '__main__':
