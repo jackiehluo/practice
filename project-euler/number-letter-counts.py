@@ -32,7 +32,9 @@ words = {
 
 total = 0
 
-for number in range(1, 1001):
+a, b = (int(x) for x in raw_input().split())
+
+for number in range(a, b + 1):
 	letters = 0
 	if len(str(number)) == 1:
 		letters = len(words[number])
@@ -55,14 +57,15 @@ for number in range(1, 1001):
 			ones = number % 10
 			tens = (number - ones) % 100
 			hundreds = (number - tens - ones) / 100
-			if tens > 1:
+			if tens / 10 > 1:
 				letters = len(words[hundreds]) + len(words[100]) + 3 + len(words[tens]) + len(words[ones])
-			elif tens == 1:
+			elif tens / 10 == 1:
 				letters = len(words[hundreds]) + len(words[100]) + 3 + len(words[tens + ones])
 			else:
 				letters = len(words[hundreds]) + len(words[100]) + 3 + len(words[ones])
 	else:
 		letters = len(words[1]) + len(words[1000])
 	total += letters
+
 
 print total
