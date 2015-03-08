@@ -4,13 +4,13 @@ def find_palindrome(num):
         num += 1
         l = len(str(num))
         if l % 2 == 0:
-            if str(num)[:l / 2 - 1:] == str(num)[l / 2::-1]:
+            if str(num) == str(num)[::-1]:
                 palindrome = True
-                print palindrome
+                print num
         else:
-            if str(num)[:l / 2 - 1:] == str(num)[l / 2 + 1::-1]:
+            if str(num) == str(num)[::-1]:
                 palindrome = True
-                print palindrome
+                print num
 
 t = int(raw_input())
 
