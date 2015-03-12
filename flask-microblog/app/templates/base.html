@@ -1,0 +1,18 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - microblog</title>
+    {% else %}
+    <title>Welcome to microblog</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
+
+  </head>
+  <body>
+    <div><a href="/index">Microblog</a></div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
