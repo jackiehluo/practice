@@ -3,7 +3,7 @@
     {% if title %}
     <title>{{ title }} - microblog</title>
     {% else %}
-    <title>Welcome to microblog</title>
+    <title>microblog</title>
     {% endif %}
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
@@ -13,6 +13,15 @@
   <body>
     <div><a href="/index">Microblog</a></div>
     <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>
