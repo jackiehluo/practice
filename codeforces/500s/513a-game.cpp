@@ -19,5 +19,6 @@ int main()
     if(n1 <= 0)
         cout << "Second" << endl;
     else
-        cout << "First" << endl;        
+        cout << "First" << endl;
+    return 0;        
 }
