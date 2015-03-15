@@ -1,0 +1,5 @@
+2015-03-15 10:47:58,415 INFO: microblog startup [in /Users/jackieluo/Documents/code/Practice/flask-microblog/app/__init__.py:26]
+2015-03-15 10:52:16,681 INFO: microblog startup [in /Users/jackieluo/Documents/code/Practice/flask-microblog/app/__init__.py:26]
+2015-03-15 10:57:05,492 INFO: microblog startup [in /Users/jackieluo/Documents/code/Practice/flask-microblog/app/__init__.py:26]
+2015-03-15 16:05:31,729 INFO: microblog startup [in /vagrant/app/__init__.py:26]
+2015-03-15 16:05:32,305 INFO: microblog startup [in /vagrant/app/__init__.py:26]
