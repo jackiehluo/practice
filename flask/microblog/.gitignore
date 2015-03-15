@@ -3,3 +3,6 @@
 app.db
 search.db
 flask
+bootstrap.sh
+vagrantfile
+.vagrant/
