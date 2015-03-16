@@ -1,27 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Edit Your Profile</h1>
-<form action="" method="post" name="edit">
-    {{ form.hidden_tag() }}
-    <table>
-        <tr>
-            <td>Nickname:</td>
-            <td>
-                {{ form.nickname(size=24) }}
-                {% for error in form.errors.nickname %}
-                <br><span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </td>
-        </tr>
-        <tr>
-            <td>About Me:</td>
-            <td>{{ form.about_me(cols=32, rows=4) }}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Save Changes"></td>
-        </tr>
-    </table>
-</form>
+    <h1>Edit Your Profile</h1>
+    {% include 'flash.html' %}
+    <div class="well">
+        <form class="form-horizontal" action="" method="post" name="edit">
+            {{ form.hidden_tag() }}
+            <div class="control-group{% if form.nickname.errors %} error{% endif %}">
+                <label class="control-label" for="nickname">Nickname:</label>
+                <div class="controls">
+                    {{ form.nickname(maxlength=64, class="span4") }}
+                    {% for error in form.nickname.errors %}
+                        <span class="help-inline">[{{ error }}]</span><br>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="control-group{% if form.about_me.errors %} error{% endif %}">
+                <label class="control-label" for="about_me">About Me:</label>
+                <div class="controls">
+                    {{ form.about_me(cols=64, rows=4, class="span4") }}
+                    {% for error in form.about_me.errors %}
+                        <span class="help-inline">[{{ error }}]</span><br>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <input class="btn btn-primary" type="submit" value="Save Changes">
+                </div>
+            </div>
+        </form>
+    </div>
 {% endblock %}
