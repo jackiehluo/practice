@@ -15,3 +15,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 POSTS_PER_PAGE = 3
+MAX_SEARCH_RESULTS = 50
+
+WHOOSH_BASE = os.path.join(basedir, 'search.db')
