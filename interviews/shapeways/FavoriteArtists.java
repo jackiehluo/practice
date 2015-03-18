@@ -8,6 +8,17 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
+// The program reads the file, goes through each line, and counts
+// the number of instances of each artist, adding any artist with
+// a count of fifty or more to another list. It then goes through
+// this list (popularArtists) and looks for pairs of popular artists,
+// counting the number of times each pair occurs. This change reduces
+// the runtime of the algorithm because the brute-force approach
+// would count every pair combination between artists in a line;
+// instead, this program only looks at pair combinations between
+// artists occurring fifty or more times on their own. It then writes
+// the artist pairs to a file (named by the user).
+
 public class FavoriteArtists {
  
     public static ArrayList<String> readFile(File f){
