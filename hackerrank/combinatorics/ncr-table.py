@@ -1,20 +1,18 @@
-from math import factorial
+from operator import mul
 
-def nCr(n, r):
-    f = factorial
-    return f(n) / f(r) / f(n - r)
+def ncr(n, r):
+    r = min(r, n - r)
+    if r == 0:
+        return 1
+    num = reduce(mul, xrange(n, n - r, -1))
+    denom = reduce(mul, xrange(1, r + 1))
+    return num / denom
 
-test_cases = int(raw_input())
+t = int(raw_input())
 
-for case in range(test_cases):
+for case in range(t):
     n = int(raw_input())
-    first = []
-    for x in range((n + 1) / 2 + 1):
-        number = nCr(n, x)
-        first.append(number % (10 ** 9))
-    if first[-1] == first[-2]:
-        second = first[-3::-1]
-    else:
-        second = first[-2::-1]
-    answer = first + second 
-    print " ".join(map(str, answer))
+    table = []
+    for i in range(n + 1):
+        table.append(ncr(n, i) % 1000000000)
+    print " ".join(map(str, table))
