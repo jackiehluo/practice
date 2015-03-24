@@ -1,25 +1,30 @@
-def find_substrings(a, b):
-    length = len(a)
-    a_substrings = [a[i:j + 1] for i in xrange(length) for j in xrange(i, length)]
-    b_substrings = [b[k:l + 1] for k in xrange(length) for l in xrange(k, length)]
-    return a_substrings, b_substrings
+def substring(a, b, c):
+    n = len(b)
+    m = a
+    for i in range(n):
+        index = []
+        mismatch = 0
+        start = i
+        pos_b = 0
+        pos_c = i
+        while pos_c < n: 
+            if b[pos_b] != c[pos_c]:
+                mismatch += 1
+                index.append(pos_c)
+                if mismatch == a + 1:
+                    mismatch -= 1
+                    m = max(m, pos_c - start)
+                    start = index[-(a + 1)] + 1
+            pos_b += 1
+            pos_c += 1
+        m = max(m, n - start)
+    return m
 
-def max_length(p_subs, q_subs, mismatches):
-    length = 0
-    for y in range(len(p_subs)):
-        differences = 0
-        for z in range(len(p_subs[y])):
-            if p_subs[y][z] != q_subs[y][z]:
-                differences += 1
-        if differences == mismatches and len(p_subs[y]) > length:
-            length = len(p_subs[y])
-    return length
-    
-test_cases = int(raw_input())
+def max_length(s, p, q):
+    return max(substring(s, p, q), substring(s, q, p))
 
-for case in range(test_cases):
-    s, p, q = (x for x in raw_input().split())
-    mismatches = int(s)
-    p_subs, q_subs = find_substrings(p, q)
-    answer = max_length(p_subs, q_subs, mismatches)
-    print answer
+t = int(raw_input())
+
+for case in range(t):
+    s, p, q = raw_input().split()
+    print max_length(int(s), p, q)
