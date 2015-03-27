@@ -2,11 +2,10 @@ import operator
 from itertools import combinations
 
 def xor(numbers):
-    total = sum(numbers)
-    for l in range(2, len(numbers) + 1):
-        subsets = combinations(numbers, l)
-        for s in subsets:
-            total = (total + reduce(operator.xor, s, 0)) % 1000000007
+    total = reduce(operator.or_, numbers) % 1000000007
+    for _ in range(len(numbers) - 1):
+        total <<= 1
+        total %= 1000000007
     return total
 
 t = int(raw_input())
