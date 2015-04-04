@@ -1,3 +1,5 @@
+from math import sqrt
+
 def smith(n):
     if(factors(n) == digits(n)):
         return 1
@@ -38,7 +40,7 @@ def primes(n):
     return primes
 
 def min_prime(n):
-    for i in range(2, n / 2 + 1):
+    for i in range(2, int(sqrt(n))):
         if(n % i == 0):
             return i
     return -1
