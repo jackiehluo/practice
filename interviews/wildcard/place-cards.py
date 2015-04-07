@@ -6,16 +6,14 @@ grid = []
 
 for line in f:
     empty = 0
-    r = []
     for c in line:
-        r.append(c)
         if c == '*':
             empty += 1
     if empty >= 5:
         total += factorial(empty) / factorial(empty - 5)
-    grid.append(r)
+    grid.append(list(line))
 
-for col in range(50):
+for col in range(len(line)):
     empty = 0
     for row in range(len(grid)):
         if grid[row][col] == '*':
