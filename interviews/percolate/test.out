@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "color": "yellow", 
+      "firstname": "James", 
+      "lastname": "Murphy", 
+      "phonenumber": "018-154-6474", 
+      "zipcode": "83880"
+    }, 
+    {
+      "color": "yellow", 
+      "firstname": "Booker T.", 
+      "lastname": "Washington", 
+      "phonenumber": "373-781-7380", 
+      "zipcode": "87360"
+    }
+  ], 
+  "errors": [
+    1, 
+    3
+  ]
+}
