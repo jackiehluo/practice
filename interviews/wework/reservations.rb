@@ -3,56 +3,57 @@ require 'open-uri'
 
 class Reservations
 
-    @months = {"01" => 31, "02" => 28, "03" => 31, "04" => 30,
-            "05" => 31, "06" => 30, "07" => 31, "08"  => 31,
-            "09" => 30, "10" => 31, "11" => 30, "12" => 31}
-
-
     def initialize(url, date)
         @url = url
         @date = date
+        @months = {"01" => 31, "02" => 28, "03" => 31, "04" => 30,
+            "05" => 31, "06" => 30, "07" => 31, "08"  => 31,
+            "09" => 30, "10" => 31, "11" => 30, "12" => 31}
     end
 
 
     def check_month
-        revenue = 0
+        revenue = 0.00
         capacity = 0
-        csv = CSV.new(open(@url), :headers => :first_row)
-        CSV.foreach(csv) do |line|
-            data = line.inspect
-            if (@date >= data[2][0..-4] and data[3].length == 10 and
-                @date <= data[3][0..-4])
-                if (@date == data[2][0..-4])
-                    revenue += prorate_start(data[1], data[2])
-                elsif (@date == data[3][0..-4])
-                    revenue += prorate_end(data[1], data[3])
+        csv = CSV.parse(open(@url).read, :headers => true)
+        csv.each do |data|
+            if (@date >= data["StartDay"][0..-4] and data["EndDay"] == nil)
+                if (@date == data["StartDay"][0..-4])
+                    revenue += prorate_start(data["MonthlyPrice"], data["StartDay"])
                 else
-                    revenue += data[1].to_i * 100
+                    revenue += data["MonthlyPrice"].to_i
                 end
-            elsif (@date >= data[2][0..-4] and data[3].length == 1)
-                if (@date == data[2][0..-4])
-                    revenue += prorate_start(data[1], data[2])
+            elsif (@date >= data["StartDay"][0..-4] and not data["EndDay"] == nil and
+                @date <= data["EndDay"][0..-4])
+                if (@date == data["StartDay"][0..-4])
+                    revenue += prorate_start(data["MonthlyPrice"], data["StartDay"])
+                elsif (@date == data["EndDay"][0..-4])
+                    revenue += prorate_end(data["MonthlyPrice"], data["EndDay"])
                 else
-                    revenue += data[1].to_i * 100
+                    revenue += data["MonthlyPrice"].to_i
                 end
-            else
-                capacity += data[0].to_i
+            elsif (not @date == data["StartDay"][0..-4])
+                if (not data["EndDay"] == nil and not @date == data["EndDay"][0..-4])
+                    capacity += data["Capacity"].to_i
+                elsif (data["EndDay"] == nil)
+                    capacity += data["Capacity"].to_i
+                end
             end
         end
-        puts "Expected Revenue: $%.2f" % (revenue / 100.00)
+        puts "Expected Revenue: $%.2f" % (revenue)
         puts "Expected Total Capacity of Unreserved Offices: #{capacity}"
     end
 
 
     def prorate_start(price, date)
         days = @months[date[5..-4]]
-        rate = (price.to_i * 100 / days) * (days - date[8..10].to_i + 1)
+        rate = (price.to_f / days) * (days - date[8..10].to_i + 1)
     end
 
 
     def prorate_end(price, date)
         days = @months[date[5..-4]]
-        rate = (price.to_i * 100 / days) * date[8..10].to_i
+        rate = (price.to_f / days) * date[8..10].to_i
     end
 
 end
