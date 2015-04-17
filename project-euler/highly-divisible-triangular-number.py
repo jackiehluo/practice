@@ -1,13 +1,35 @@
+from collections import Counter
 from math import sqrt
 
-triangle = 0
+def prime_factorize(n):
+    factors = []
+    number = abs(n)
+    while number > 1:
+        factor = get_next_prime(number)
+        factors.append(factor)
+        number /= factor
+    if n < -1:
+        factors[0] = -factors[0]
+    return factors
 
-for i in xrange(1, 100000000):
-	triangle += i
-	divisors = 0
-	for j in xrange(1, int(sqrt(i)) + 1):
-		if triangle % j == 0:
-			divisors += 1
-	if divisors > 500:
+def get_next_prime(n):
+    if n % 2 == 0:
+        return 2
+    for x in range(3, int(sqrt(n) + 1), 2):
+        if n % x == 0:
+            return x
+    return n
+
+n = 1
+
+while True:
+	triangle = n * (n + 1) / 2
+	factors = prime_factorize(triangle)
+	counts = Counter(factors)
+	divisors = 1
+	for k, v in counts.iteritems():
+		divisors *= v + 1
+	if divisors >= 500:
 		print triangle
 		break
+	n += 1
