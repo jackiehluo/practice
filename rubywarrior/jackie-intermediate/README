@@ -1,21 +1,28 @@
-Level 2
+Level 3
 
-Another large room, but with several enemies blocking your way to the stairs.
+You feel slime on all sides, you're surrounded!
 
-Tip: Just like walking, you can attack! and feel in multiple directions (:forward, :left, :right, :backward).
+Tip: Call warrior.bind!(direction) to bind an enemy to keep him from attacking. Bound enemies look like captives.
 
- ----
-|@s  |
-| sS>|
- ----
+ ---
+|>s |
+|s@s|
+| C |
+ ---
 
   > = Stairs
   @ = Jackie (20 HP)
   s = Sludge (12 HP)
-  S = Thick Sludge (24 HP)
+  C = Captive (1 HP)
 
 
 Warrior Abilities:
+
+  warrior.rescue!
+    Rescue a captive from his chains (earning 20 points) in given direction (forward by default).
+
+  warrior.bind!
+    Binds a unit in given direction to keep him from moving (forward by default).
 
   warrior.attack!
     Attacks a unit in given direction (forward by default).
