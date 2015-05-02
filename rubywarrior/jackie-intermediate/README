@@ -1,0 +1,46 @@
+Level 3
+
+You feel slime on all sides, you're surrounded!
+
+Tip: Call warrior.bind!(direction) to bind an enemy to keep him from attacking. Bound enemies look like captives.
+
+ ---
+|>s |
+|s@s|
+| C |
+ ---
+
+  > = Stairs
+  @ = Jackie (20 HP)
+  s = Sludge (12 HP)
+  C = Captive (1 HP)
+
+
+Warrior Abilities:
+
+  warrior.rescue!
+    Rescue a captive from his chains (earning 20 points) in given direction (forward by default).
+
+  warrior.bind!
+    Binds a unit in given direction to keep him from moving (forward by default).
+
+  warrior.attack!
+    Attacks a unit in given direction (forward by default).
+
+  warrior.health
+    Returns an integer representing your health.
+
+  warrior.rest!
+    Gain 10% of max health back, but do nothing more.
+
+  warrior.walk!
+    Move in the given direction (forward by default).
+
+  warrior.feel
+    Returns a Space for the given direction (forward by default).
+
+  warrior.direction_of_stairs
+    Returns the direction (:left, :right, :forward, :backward) the stairs are from your location.
+
+
+When you're done editing player.rb, run the rubywarrior command again.
