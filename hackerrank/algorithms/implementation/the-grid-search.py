@@ -1,14 +1,16 @@
 def search_grid(R, C, G, r, c, g):
     i = 0
     while i < R:
-        result = G[i].find(g[0])
-        if result != -1:
+        if g[0] in G[i]:
             j = 0
-            while j < r and result != -1 :
-                result = G[i].find(g[j])
+            p = G[i].find(g[0])
+            while j < r and p != -1:
+                if p != G[i].find(g[j]):
+                    break
+                p = G[i].find(g[j])
                 i += 1
                 j += 1
-            if j == r and result != -1:
+            if j == r and p != -1:
                 return "YES"
         i += 1
     return "NO"
