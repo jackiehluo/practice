@@ -13,7 +13,7 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
-        char c = putchar(tolower(s[i]));
+        char c = tolower(s[i]);
         if (counts[c])
             counts[c]++;
         else
