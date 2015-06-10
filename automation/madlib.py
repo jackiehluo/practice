@@ -16,6 +16,12 @@ driver.find_element_by_id("ml-2015-06-01-10-box").send_keys("bikes")
 driver.find_element_by_id("ml-2015-06-01-1-box").send_keys("Jackie")
 driver.find_element_by_id("ml-2015-06-01-button").click()
 
-print driver.find_element_by_id("ml-2015-06-01-result").text
+correct_result = "Say 'Jackie,' the photographer said as the camera flashed! New York and I had gone to sushi to get our photos taken today. The first photo we really wanted was a picture of us dressed as cats pretending to be a sad. When we saw the proofs of it, I was a bit funny because it looked different than in my head. (I hadn't imagined so many Beyonce behind us.) However, the second photo was exactly what I wanted. We both looked like Flawless wearing sleeping and bikes--exactly what I had in mind!"
+result = driver.find_element_by_id("ml-2015-06-01-result").text
 
-driver.close()
+try:
+	assert correct_result in result
+except AssertionError:
+	print ":("
+finally:
+	driver.close()
