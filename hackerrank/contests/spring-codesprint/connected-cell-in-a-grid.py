@@ -1,4 +1,4 @@
-lls():
+def max_cells():
     max_cells = 0
     visits = [[0 for col in range(n)] for row in range(m)]
     for r in range(m):
