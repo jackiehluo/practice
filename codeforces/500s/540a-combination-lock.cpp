@@ -1,6 +1,4 @@
-#include <iostream>
-#include <sstream>
-#include <stdlib.h>
+#include <bits\stdc++.h>
 using namespace std;
 
 int main()
@@ -8,19 +6,11 @@ int main()
     int n;
     string a, b;
     cin >> n >> a >> b;
-    int count;
+    int ans = 0;
 
     for (int i = 0; i < n; i++)
-    {
-        if (a[i] - b[i] != 0)
-        {
-            if (abs(a[i] - b[i]) <= 10 - abs(a[i] - b[i]))
-                count += abs(a[i] - b[i]) - '0';
-            else
-                count += 10 - abs(a[i] - b[i]) - '0';
-        }
-    }
-
-    cout << count << endl;
+        ans += min(10 - abs(a[i] - b[i]), abs(a[i] - b[i]));
+    
+    cout << ans << endl;
     return 0;
 }
