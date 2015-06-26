@@ -1,10 +1,7 @@
-def is_palindrome(s):
-    return s == s[::-1]
-    
 s = list(raw_input())
 c = []
 
-while not is_palindrome(s):
+while s != s[::-1]:
     c.append(s.pop())
 
 print len(s) + len(c) * 2
