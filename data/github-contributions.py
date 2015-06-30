@@ -49,3 +49,5 @@ print "Light Green:", first
 print "Medium Green:", second
 print "Bright Green:", third
 print "Dark Green:", fourth
+
+print ','.join(map(str, contributions))
