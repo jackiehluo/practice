@@ -1,13 +1,14 @@
 from bs4 import BeautifulSoup
+from collections import Counter
 import requests
 
-#Brackets: 0 1-3 4-7 8-12 12-18
+#Brackets: 0 1-3 4-7 8-11 12-18
 
 def median(data):       
     sorted_data = sorted(data)
     mid = len(sorted_data) / 2
     if (len(sorted_data) % 2 == 0):
-        return (sorted_data[mid - 1] + sorted_data[mid]) / 2.0
+        return (sorted_data[mid - 1] + sorted_data[mid]) / 2
     else:
         return sorted_data[mid]
 
@@ -28,11 +29,6 @@ contributions = [int(c['data-count']) for c in r if int(c['data-count']) > 0]
 q1, q3 = quartiles(contributions)
 median = median(contributions)
 
-print "First Quartile:", q1
-print "Second Quartile:", median
-print "Third Quartile:", q3
-print "Fourth Quartile:", max(contributions)
-
 first, second, third, fourth = 0, 0, 0, 0
 
 for c in contributions:
@@ -45,9 +41,19 @@ for c in contributions:
     else:
         fourth += 1
 
+print
+print "QUARTILES"
+print "First Quartile:", q1
+print "Second Quartile:", median
+print "Third Quartile:", q3
+print "Fourth Quartile:", max(contributions)
+print
+print "COLORS"
 print "Light Green:", first
 print "Medium Green:", second
 print "Bright Green:", third
 print "Dark Green:", fourth
-
-print ','.join(map(str, contributions))
+print
+print "COUNTS"
+for k, v in Counter(contributions).items():
+    print str(k) + ": " + str(v)
