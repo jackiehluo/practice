@@ -43,10 +43,11 @@ for c in contributions:
 
 print
 print "QUARTILES"
-print "First Quartile:", q1
-print "Second Quartile:", median
-print "Third Quartile:", q3
-print "Fourth Quartile:", max(contributions)
+print "Minimum:", min(contributions)
+print "Lower Quartile:", q1
+print "Median:", median
+print "Upper Quartile:", q3
+print "Maximum:", max(contributions)
 print
 print "COLORS"
 print "Light Green:", first
