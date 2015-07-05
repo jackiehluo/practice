@@ -5,13 +5,22 @@ int main()
 {
     int n, m, t, sum(0);
     cin >> n;
-    int worms[n];
+    int counts[n];
 
     for (int i = 0; i < n; i++)
     {
         cin >> t;
         sum += t;
-        worms[i] = sum;
+        counts[i] = sum;
+    }
+
+    int ind(0), worms[sum + 1];
+
+    for (int i = 1; i <= sum; i++)
+    {
+        if (i > counts[ind])
+            ind++;
+        worms[i] = ind + 1;
     }
 
     cin >> m;
@@ -19,14 +28,7 @@ int main()
     for (int i = 0; i < m; i++)
     {
         cin >> t;
-        for (int j = 0; j < n; j++)
-        {
-            if (t <= worms[j])
-            {
-                cout << j + 1 << endl;
-                break;
-            }
-        }
+        cout << worms[t] << endl;
     }
 
     return 0;
