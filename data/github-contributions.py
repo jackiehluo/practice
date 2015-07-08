@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from collections import Counter
+import numpy
 import requests
 
 #Brackets: 0 1-3 4-7 8-11 12-18
@@ -41,6 +42,10 @@ for c in contributions:
     else:
         fourth += 1
 
+print
+print "STATS"
+print "Mean:", sum(contributions) / len(contributions)
+print "Standard Deviation", round(numpy.std(contributions), 2)
 print
 print "QUARTILES"
 print "Minimum:", min(contributions)
