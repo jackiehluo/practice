@@ -44,8 +44,10 @@ for c in contributions:
 
 print
 print "STATS"
-print "Mean:", sum(contributions) / len(contributions)
-print "Standard Deviation", round(numpy.std(contributions), 2)
+print "Total Contributions:", sum(contributions)
+print "Total Days:", len(contributions)
+print "Mean:", round(float(sum(contributions)) / len(contributions), 1)
+print "Standard Deviation", round(numpy.std(contributions), 1)
 print
 print "QUARTILES"
 print "Minimum:", min(contributions)
