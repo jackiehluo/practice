@@ -24,7 +24,7 @@ int main()
         for (int j = 0; j < m; j++)
             if (abs(a[i] - b[j]) < 2)
             {
-                b[j] = 100;
+                b[j] = 1000;
                 pairs++;
                 break;
             }
