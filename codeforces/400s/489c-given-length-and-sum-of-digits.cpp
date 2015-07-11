@@ -3,31 +3,35 @@ using namespace std;
 
 int main()
 {
-    int m, s;
+    int m, s, t, i;
     cin >> m >> s;
-    string min = "1", max;
+    string a, b;
 
-    if (s == 0 and m == 1)
-        cout << "0 0" << endl;
-    else if (s == 0 and m > 1)
-        cout << "-1 -1" << endl;
-    else
+    if (s == 0)
     {
-        while (max.size() < m)
-            max += '9';
-        while (min.size() < m)
-            min += '0';
-        int l = min.size() - 1;
-        while (s != 0 and l >= 0)
-        {
-            min[l]++, s--;
-            if (min[l] == '9')
-                l--;
-        }
-        if (s > 0)
-            cout << "-1 -1" << endl;
-        else
-            cout << min << " " << max;
+        cout << (m == 1 ? "0 0" : "-1 -1") << endl;
+        return 0;
     }
+
+    for (i = 0; i < m; i++)
+    {
+        t = min(s, 9);
+        b += t + '0';
+        s -= t;
+    }
+
+    if (s > 0)
+    {
+        cout << "-1 -1" << endl;
+        return 0;
+    }
+
+    for (i = m - 1; i >= 0; i--)
+        a += b[i];
+
+    for (i = 0; a[i] == '0'; i++);
+
+    a[i]--, a[0]++;
+    cout << a << " " << b << endl;
     return 0;
 }
