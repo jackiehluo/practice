@@ -4,18 +4,28 @@ using namespace std;
 
 int main()
 {
-    int n, t, m(0);
+    int n;
     cin >> n;
-    string s, w;
-    map<string, int> p;
+    map<string, int> s, t;
+    string p[n];
+    int v[n], m(0);
 
     for (int i = 0; i < n; i++)
     {
-        cin >> s >> t;
-        p[s] += t;
-        if (p[s] > m) m = p[s], w = s;
+        cin >> p[i] >> v[i];
+        s[p[i]] += v[i];
     }
 
-    cout << w << endl;
-    return 0;
+    for (int i = 0; i < n; i++) m = max(m, s[p[i]]);
+
+    for (int i = 0; i < n; i++)
+        if (s[p[i]] == m)
+        {
+            t[p[i]] += v[i];
+            if (t[p[i]] >= m)
+            {
+                cout << p[i] << endl;
+                return 0;
+            }
+        }
 }
