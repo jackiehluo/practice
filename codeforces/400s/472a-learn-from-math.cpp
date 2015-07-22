@@ -20,7 +20,7 @@ int main()
     cin >> n;
     a = floor(n / 2.0);
     b = ceil(n / 2.0);
-    
+
     for(int i = 0; i < (n / 2); i++)
     {
         if(comp(a) && comp(b))

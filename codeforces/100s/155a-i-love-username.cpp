@@ -23,7 +23,7 @@ int main()
             w = p;
         }
     }
-    
+
     cout << a << endl;
     return 0;
 }

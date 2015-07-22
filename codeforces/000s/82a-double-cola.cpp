@@ -8,7 +8,7 @@ int main()
     cin >> n;
     int r = 1;
     string p[] = {"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"};
-    
+
     while(r * 5 < n)
     {
         n -= r * 5;

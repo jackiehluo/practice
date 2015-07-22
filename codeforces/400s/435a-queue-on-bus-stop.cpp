@@ -12,7 +12,7 @@ int main()
         if (s + t <= m)
             s += t;
         else
-        {   
+        {
             b++;
             s = t;
         }

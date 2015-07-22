@@ -26,6 +26,6 @@ int main()
         cin >> t;
         cout << d[t] << endl;
     }
-    
+
     return 0;
 }

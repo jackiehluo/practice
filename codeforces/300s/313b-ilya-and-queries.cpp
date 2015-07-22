@@ -11,7 +11,7 @@ int main() {
     {
         if (s[i] == s[i - 1])
             t++;
-        c[i] = t;        
+        c[i] = t;
     }
 
     int q, l, r;

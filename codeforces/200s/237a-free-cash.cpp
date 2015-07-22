@@ -12,7 +12,7 @@ int main()
     vector<string> c;
     map<string, int> counts;
     cin >> n;
-    
+
     for(int i = 0; i <= n; i++)
     {
         getline(cin, t);
@@ -32,7 +32,7 @@ int main()
         if(it2->second > max)
             max = it2->second;
     }
-    
+
     cout << max << endl;
     return 0;
 }

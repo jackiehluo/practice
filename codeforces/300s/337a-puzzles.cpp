@@ -11,9 +11,9 @@ int main()
 
     for(int i = 0; i < m; i++)
         cin >> p[i];
-    
+
     sort(p, p + m);
-    
+
     if(m == n)
         s = p[m - 1] - p[0];
     else
