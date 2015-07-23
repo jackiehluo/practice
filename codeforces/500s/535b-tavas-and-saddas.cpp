@@ -8,7 +8,7 @@ int main()
 
     while (n)
     {
-        if (n % 10 == 4) t += m; 
+        if (n % 10 == 4) t += m;
         else t += 2 * m;
         n /= 10, m *= 2;
     }

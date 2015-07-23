@@ -22,7 +22,7 @@ int main()
         c++;
         s += v[n - c];
     }
-    
+
     cout << c << endl;
     return 0;
 }

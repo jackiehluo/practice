@@ -13,7 +13,7 @@ int main()
         c += h;
         n -= c;
     }
-    
+
     cout << h << endl;
     return 0;
 }

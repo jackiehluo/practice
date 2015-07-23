@@ -9,9 +9,9 @@ int main()
 
     for (int i = 0; i < m + 1; i++)
         cin >> a[i];
-    
+
     int friends = 0;
-    
+
     for (int i = 0; i < m; i++)
     {
         int t = 0;

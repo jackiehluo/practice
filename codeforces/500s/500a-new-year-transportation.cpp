@@ -3,25 +3,16 @@ using namespace std;
 
 int main()
 {
-	int n, t;
-	cin >> n >> t;
-	int c[n];
-	int p = 0;
-	
-	for(int i = 0; i < n; i++)
-	{
-		cin >> c[i];
-	}
+    int n, t;
+    cin >> n >> t;
+    int c[n];
+    int p = 0;
 
-	while(p < t - 1)
-	{
-		p += c[p];
-	}
+    for(int i = 0; i < n; i++) cin >> c[i];
 
-	if(p == t - 1)
-		cout << "YES" << endl;
-	else
-		cout << "NO" << endl;
+    while(p < t - 1) p += c[p];
 
-	return 0;
+    if(p == t - 1) cout << "YES" << endl;
+    else cout << "NO" << endl;
+    return 0;
 }

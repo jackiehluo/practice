@@ -26,7 +26,7 @@ int main()
         else
             c[*it1] += 1;
     }
-    
+
     for(map<int, int>::iterator it2 = c.begin(); it2 != c.end(); ++it2)
     {
         if(it2->second == 1)

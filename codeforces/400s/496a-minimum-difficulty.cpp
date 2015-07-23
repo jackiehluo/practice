@@ -17,7 +17,7 @@ int main()
 
     for (int i = 2; i < n; i++)
         m = max(min(m, d[i] + d[i - 1]), s);
-    
+
     cout << m << endl;
     return 0;
 }

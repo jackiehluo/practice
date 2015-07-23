@@ -7,7 +7,7 @@ int main()
     string s;
     cin >> a1 >> a2 >> a3 >> a4 >> s;
     int calories = 0;
-    
+
     for (auto& digit : s)
     {
         if (digit == '1')

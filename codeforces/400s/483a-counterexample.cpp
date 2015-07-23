@@ -5,7 +5,7 @@ int main()
 {
     long long int a, b, c, l, r;
     cin >> l >> r;
-    
+
     if (l % 2 == 1)
         l += 1;
     if (r - l < 2)

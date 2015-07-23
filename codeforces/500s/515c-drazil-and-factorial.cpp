@@ -3,7 +3,7 @@
 using namespace std;
 
 int main()
-{   
+{
     int n, v;
     cin >> n;
     map<int, int> counts;

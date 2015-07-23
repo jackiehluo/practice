@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main(){  
+int main(){
     int n, t, f(0), z(0);
     cin >> n;
 
     for (int i = 0; i < n; i++)
-    {  
+    {
         cin >> t;
         if (t == 0)
-            z++;  
+            z++;
         else if (t == 5)
-            f++;  
-    }  
+            f++;
+    }
 
     if (z == 0)
         cout << -1 << endl;

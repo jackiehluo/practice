@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 using namespace std;
 
 int main()
@@ -14,7 +14,7 @@ int main()
         cin >> t;
         sum += t;
     }
-    
+
     if (sum > 0)
         cout << ceil(sum / x) << endl;
     else

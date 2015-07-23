@@ -16,7 +16,7 @@ int main()
                 if (f[a + x][b + y] and f[a + x][b] and f[a][b + y] and r == 0)
                     r = i;
     }
-    
+
     cout << r << endl;
     return 0;
 }

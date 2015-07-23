@@ -8,7 +8,7 @@ int main()
     long long n, v;
     vector<long long> c;
     cin >> n;
-    
+
     for(int i = 0; i < n; i++)
     {
         cin >> v;

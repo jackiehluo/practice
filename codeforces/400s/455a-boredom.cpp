@@ -2,7 +2,7 @@
 using namespace std;
 
 int main()
-{   
+{
     const int N = 1000000;
     int counts[N];
     long long points[N];

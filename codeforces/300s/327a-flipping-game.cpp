@@ -6,7 +6,7 @@ int main()
     int n, t;
     int count = 0, extra = 0, max_extra = -1;
     cin >> n;
-    
+
     while (n--)
     {
         cin >> t;

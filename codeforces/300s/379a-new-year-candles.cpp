@@ -14,7 +14,7 @@ int main()
         m = a % b;
         a = d + m;
     }
-    
+
     cout << h << endl;
     return 0;
 }
