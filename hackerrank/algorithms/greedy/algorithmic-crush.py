@@ -1,9 +1,19 @@
-n, m = (int(x) for x in raw_input().split())
-d = dict.fromkeys(range(1, n + 1), 0)
+def update_list(n, m, d):
+    d.sort()
+    r, t = 0, 0
+    for op in d:
+        if op[1] == -1:
+            t += op[2]
+        else:
+            t -= op[2]
+        if t > r:
+            r = t
+    return r
 
-for op in range(m):
-    a, b, k = (int(y) for y in raw_input().split())
-    for i in range(a, b + 1):
-        d[i] += k
-
-print d[max(d, key = d.get)]
+n, m = map(int, raw_input().split())
+d = []
+for i in range(m):
+    a, b, k = map(int, raw_input().split())
+    d.append([a, -1, k])
+    d.append([b, 1, k])
+print update_list(n, m, d)
