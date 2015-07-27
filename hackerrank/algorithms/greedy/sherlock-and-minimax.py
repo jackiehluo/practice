@@ -1,17 +1,25 @@
-def find_minimax(numbers, p, q):
-    mins = []
-    for i in range(p, q + 1):
-        minimum = max(numbers)
-        for j in numbers:
-            if abs(j - i) < minimum:
-                minimum = abs(j - i)
-        mins.append(minimum)
-    minimax = max(mins)
-    index = min([k for k, l in enumerate(mins) if l == minimax])
-    return range(p, q + 1)[index]
+def find_minimax(n, a, p, q):
+    c = []
+    for i in range(n - 1):
+        if (a[i] + a[i + 1]) % 2 == 0:
+            c.append((a[i] + a[i + 1]) / 2)
+        else:
+            c.append((a[i] + a[i + 1]) / 2)
+            c.append((a[i] + a[i + 1]) / 2 + 1)
+    c.append(p)
+    c.append(q)
+    c.sort()
+    d, r = -1, 0
+    for i in c:
+        if i >= p and i <= q:
+            l = 10 ** 9
+            for j in a:
+                l = min(l, abs(i - j))
+            if l > d:
+                d, r = l, i
+    return r
 
 n = int(raw_input())
-numbers = [int(x) for x in raw_input().split()]
-p, q = (int(y) for y in raw_input().split())
-answer = find_minimax(numbers, p, q)
-print answer
+a = sorted(list(map(int, raw_input().split())))
+p, q = map(int, raw_input().split())
+print find_minimax(n, a, p, q)
