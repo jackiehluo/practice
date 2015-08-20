@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<head>
+  <meta charset="utf-8">
+  <title>DIY K-means</title>
+
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/underscore-min.js"></script>
+
+  <!-- Math formula stylesheets and script-->
+  <link rel="stylesheet" href="css/UnifrakturMaguntia.css">
+  <link rel="stylesheet" href="css/jqmath-0.4.0.css">
+  <script src="js/jqmath-etc-0.4.0.min.js"></script>
+
+  <!-- Bootstrap stylesheets and script -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Stylesheet for this page -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- D3 -->
+  <script src="js/d3.v3.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+  <div id="title-bar">
+    <h1>K-Means Clustering</h1>
+  </div>
+  <div id="graph-container">
+    <div id="graph-col">
+      <div id="setup-bar">
+        <div class="btn-group-justify">
+          <button id="reset" type="button" class="btn btn-primary">Reset</button>
+          <button id="add-centroid" type="button" class="btn btn-primary">Add Centroid</button>
+          <button id="remove-centroid" type="button" class="btn btn-primary">Remove Centroid</button>
+        </div>
+      </div>
+      <div id="data-bar">
+        <div class="btn-group-justify">
+          <button id="random-data" type="button" class="btn btn-info">Generate Random Data</button>
+          <!-- <button id="fb-data" type="button" class="btn btn-info">Load Facebook Data</button> -->
+          <button id="square-data" type="button" class="btn btn-info">Load Square Data</button>
+        </div>
+      </div>
+    </div>
+    <div id="steps-col">
+      <h3> Algorithm steps: </h3>
+      <div class="btn-group-vertical">
+        <button id="assign" type="button" class="btn btn-success">Assign Centroids to Points</button>
+        <button id="update" type="button" class="btn btn-success">Update Centroids</button>
+      </div>
+      <h3> Algorithm metric: </h3>
+        $$∑↙{k=1}↖K ∑↙{x_i∈c_k}  {‖ x_i - μ_k ‖^2}$$ = <span id="metricValue"><span> 
+    </div>
+  </div>
+  
+  <script src="implement.js" charset="utf-8"></script>
+  <script src="js/examplePoints.js" charest="utf-8"></script>
+  <script src="js/facebookPoints.js" charest="utf-8"></script>
+  <script src="js/squarePoints.js" charest="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
