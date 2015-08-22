@@ -2,7 +2,7 @@
 
 /* A Point has a position defined by x, y and a centroid that it can be assigned to.
   When no centroid is assigned, the following is true: this.centroid === undefined
-  Points are created when data is loaded. You shouldn't need to call new Point(...).
+  Points are created when data is loaded.
 */
 function Point(x, y, centroid) {
   this.x = x;
@@ -12,8 +12,7 @@ function Point(x, y, centroid) {
 
 /* A Centroid has a position defined by x,y.
   Centroids are created and removed by clicking on the Add Centroid and Remove Centroid buttons.
-  You shouldn't need to call new Centroid(...).
-  The id field is needed so that the same color is always used when displaying the centroid. Ignore this field.
+  The id field is needed so that the same color is always used when displaying the centroid.
 */
 function Centroid(x, y, id) {
   this.x = x;
@@ -29,12 +28,7 @@ var centroids = [];
 //points is a list of currently displayed points.
 var points = [];
 
-
-/* IMPLEMENT THE FUNCTIONS BELOW
---------------------------------
-*/
-
-/* For each point, assign it to the cluster represented by the closest centroid */
+/* Assigns each point to the cluster represented by the closest centroid */
 function assignCentroids() {
   for (i = 0; i < points.length; i++) {
     var min = Infinity;
@@ -49,9 +43,7 @@ function assignCentroids() {
   }
 }
 
-/* Update the position of each centroid based on the points assigned to it. 
-  The new position should be the mean of the positions of the points assigned to it.
-*/
+/* Updates the position of each centroid based on the points assigned to it. */
 function updateCentroids() {
   for (i = 0; i < centroids.length; i++) {
     var count = 0;
