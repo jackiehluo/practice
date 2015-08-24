@@ -24,19 +24,19 @@ var Features = Object.freeze({
   The Gini impurity of a set is defined as 1 - sum(freq_i^2), where freq_i are the frequencies for each class.
 */
 function calculateGiniImpurityOfSet(datapoints) {
+  if (datapoints.length === 0) return 0;
   var fraud = 0;
-  var nonfraud = 0;
+  var notfraud = 0;
   for (i = 0; i < datapoints.length; i++) {
-    if (datapoints[i].label = "FRAUD") {
+    if (datapoints[i].label === "FRAUD") {
       fraud++;
     }
     else {
-      nonfraud++;
+      notfraud++;
     }
   }
-  var gini = 1 - Math.pow(fraud / datapoints.length, 2) -
-    Math.pow(nonfraud / datapoints.length, 2);
-  return gini;
+  return 1 - Math.pow(fraud / datapoints.length, 2) -
+    Math.pow(notfraud / datapoints.length, 2);;
 }
 
 /*
@@ -45,7 +45,6 @@ function calculateGiniImpurityOfSet(datapoints) {
 */
 function calculateGiniImpurityOfSplit(datapoints1, datapoints2) {
   var total = datapoints1.length + datapoints2.length;
-  var gini = (calculateGiniImpurityOfSet(datapoints1) * datapoints1.length / total +
-    calculateGiniImpurityOfSet(datapoints2) * datapoints2.length / total) / 2;
-  return gini;
+  return calculateGiniImpurityOfSet(datapoints1) * datapoints1.length / total +
+    calculateGiniImpurityOfSet(datapoints2) * datapoints2.length / total;;
 }
