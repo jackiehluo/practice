@@ -1,0 +1,77 @@
+
+body {
+  padding: 0px 50px;
+  font: 10px sans-serif;
+}
+
+button.update {
+  margin-top: 20px;
+}
+
+tspan.rule {
+  fill: black;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+svg {
+  border: groove;
+  background-color: white;
+  width: 100%;
+}
+
+#tree-container {
+  min-height: 500px;
+  height: 100%;
+  width: 65%;
+  float: left;
+  margin: 10px;
+}
+
+.link {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.bounding-box {
+  fill: #ccc;
+  fill-opacity: .3;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+#container {
+  /*float: left;*/
+}
+
+#graph-container {
+  min-height: 500px;
+  height: 100%;
+  width: 30%;
+  float: left;
+  margin: 10px;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
