@@ -36,7 +36,7 @@ function calculateGiniImpurityOfSet(datapoints) {
     }
   }
   return 1 - Math.pow(fraud / datapoints.length, 2) -
-    Math.pow(notfraud / datapoints.length, 2);;
+    Math.pow(notfraud / datapoints.length, 2);
 }
 
 /*
@@ -46,5 +46,5 @@ function calculateGiniImpurityOfSet(datapoints) {
 function calculateGiniImpurityOfSplit(datapoints1, datapoints2) {
   var total = datapoints1.length + datapoints2.length;
   return calculateGiniImpurityOfSet(datapoints1) * datapoints1.length / total +
-    calculateGiniImpurityOfSet(datapoints2) * datapoints2.length / total;;
+    calculateGiniImpurityOfSet(datapoints2) * datapoints2.length / total;
 }
