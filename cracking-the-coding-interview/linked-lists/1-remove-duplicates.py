@@ -2,13 +2,10 @@ class LinkedList(object):
 
     def __init__(self):
         self.head = None
-        self.tail = None
-
 
     def insert(self, data):
         new_node = Node(data, self.head)
         self.head = new_node
-
 
     def remove_duplicates(self):
         if self.head == None:
@@ -29,7 +26,6 @@ class LinkedList(object):
             print cur.data
             cur = cur.next
 
-
 class Node:
 
     def __init__(self, data, next): 
@@ -40,7 +36,6 @@ class Node:
         return str(self.data)
 
 test = LinkedList()
-
 test.insert(6)
 test.insert(5)
 test.insert(4)
