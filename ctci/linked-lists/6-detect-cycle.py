@@ -4,8 +4,8 @@ class LinkedList(object):
         self.head = None
         self.last = None
 
-    def insert_at_end(self, data, next=None):
-        node = Node(data, next)
+    def insert_at_end(self, data):
+        node = Node(data, None)
         if self.head and self.last:
             self.last.next = node
             self.last = node
