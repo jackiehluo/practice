@@ -22,19 +22,22 @@ class Node:
 
 def add_numbers(a, b):
     cur_a, cur_b = a.head, b.head
-    total, place, remainder = 0, 1, 0
+    total, place, carry = 0, 1, 0
     while cur_a or cur_b:
         if cur_a and cur_b:
-            n = cur_a.data + cur_b.data + remainder
-            total += (n % 10) * place
-            if n >= 10: remainder = n - 9
-            else: remainder = 0
+            n = cur_a.data + cur_b.data + carry
+            if n < 10:
+                total += (n % 10) * place
+                carry = 0
+            else: carry = 1
             cur_a, cur_b = cur_a.next, cur_b.next
         elif cur_a:
-            total += cur_a.data * place
+            total += (cur_a.data + carry) * place
+            carry = 0
             cur_a = cur_a.next
         else:
-            total += cur_b.data * place
+            total += (cur_b.data + carry) * place
+            carry = 0
             cur_b = cur_b.next
         place *= 10
     return total
