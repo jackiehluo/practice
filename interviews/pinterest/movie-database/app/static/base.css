@@ -1,0 +1,18 @@
+body, html  						{ font-family:helvetica,sans-serif; background: #eee; margin: 0; border-color: #3699ef; color: #377BA8;}
+h1          			  		{ font-size: 2em;}
+h2										  { border-top: 1px solid; font-size: 1.5em; margin: 7px 0 0 0; padding: 14px 14px 0 0;}
+dl, dd, dt   						{ padding:0; margin:0;}
+.main										{ margin: 14px 0 0 14px;}
+.movies        			    { list-style: none; margin: 0; padding: 0; }
+.movies li     			    { margin: 0.3em 1.2em ; font-size: 0.9em; line-height: 0.1em; padding:10px 5px;}
+.movies li a   			    { font-size: 0.75em; text-decoration: none; color:#4097cd;}
+.movies li a:hover 			{ font-size: 0.9em; text-decoration: none; color:white; background-color:#4097cd; }
+.movies li a.delete 		{ cursor:pointer; padding:5px; margin:0 4px;}
+.add-movie		   			  { font-weight: bold; margin:14px 0;}
+.add-movie dl   			  { font-weight: bold;}
+.add-movie dt		   			{ margin: 0 0 7px 0;}
+.error          			  { background: #F0D6D6; padding: 0.5em; }
+.title								  { color:#3aac6e; font-weight:800; font-size: 1.2em; }
+.status								  { display: none; color:#66fbe0; font-size:0.7em; padding:0; margin:0;font-variant: small-caps;}
+.noMovies			  			  { display: none;}
+.added									{ background-color: #9CEBA2;}
