@@ -1,0 +1,42 @@
+MOVIE:  Table of movies that are available in the video store.
+    id:             Integer identifying the movie instance.
+    title:          String with the title of the movie.
+    duration:       Integer with the total duration of the movie, in seconds.
+    release_year:   Integer with the year of release of the movie.
+    rental_rate:    Float with the daily cost of renting the movie.
+    rating:         Float in the interval 0-10, measuring how much viewers 
+                    enjoyed the movie.
+
+GENRE:  Table of movie genres.
+    id:             Integer identifying the genre instance.
+    name:           String with the name of the genre.
+
+ACTOR:  Table of actors.
+    id:             Integer identifying the actor instance.
+    name:           String with the full name of the actor.
+
+CUSTOMER:  Table of customers of the video store.
+    id:             Integer identifying the customer instance.
+    name:           String with the full name of the customer.
+    country:        String with the country of the customer.
+    create_date:    Integer with unix timestamp, in seconds, marking when 
+                    the customer became a member of the video-store.
+
+RENTAL:  Table of video rentals.
+    id:             Integer identifying the rental instance.
+    customer_id:    Integer identifying the customer who performed the rental.
+    movie_id:       Integer identifying the movie that was rented.
+    checkout_date:  Integer with unix timestamp, in seconds, marking when 
+                    the video was checked out by the customer.
+    return_date:    Integer with unix timestamp, in seconds, marking when the 
+                    video was returned by the customer.
+    cost:           Float with total dollar amount that was charged to the 
+                    customer for the rental.
+
+MOVIE_GENRE:  Association between a movie and its genre.
+    movie_id:       Integer identifying the movie instance.
+    genre_id:       Integer identifying the genre instance.
+
+MOVIE_ACTOR:  Association between a movie and an actor performing in that movie.
+    movie_id:       Integer identifying the movie instance.
+    actor_id:       Integer identifying the actor instance.
